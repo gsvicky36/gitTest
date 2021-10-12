@@ -1,4 +1,4 @@
-package sampleTest1;
+package sampleTest2;
 
 import java.io.File;
 import java.io.IOException;
@@ -13,7 +13,7 @@ import org.testng.annotations.Test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class SampleTest1 {
+public class SampleTest2 {
 
 		
 		@Test
@@ -21,16 +21,15 @@ public class SampleTest1 {
 			WebDriverManager.chromedriver().setup();
 			WebDriver wd=new ChromeDriver();
 	wd.manage().window().maximize();
-			wd.get("https://www.google.com/");
+			wd.get("https://www.bing.com/");
 			
 			File src=((TakesScreenshot)wd).getScreenshotAs(OutputType.FILE);
 			
 			///Users/e11/Documents/online/workspace/batch181/C2_WebdriverTest/screenshot
 			//FileUtils //appache //1.0, 2.0
-			FileHandler.copy(src, new File("C:\\Users\\Anitha\\eclipse-workspace\\gitTest\\screenShot\\google.png"));
+			FileHandler.copy(src, new File("C:\\Users\\Anitha\\eclipse-workspace\\gitTest\\screenShot\\bing.png"));
 			Thread.sleep(3000);
 			wd.close();
-			
 			
 		}
 		
